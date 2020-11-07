@@ -47,7 +47,10 @@ public class IWish : MonoBehaviour
 
     public void SaveWish() {
         gm.savedWish.Add(kode);
-        Debug.Log(kode);
+        PlayerPrefs.SetString("savedWish" + PlayerPrefs.GetInt("savedWishCount").ToString(), kode);
+        PlayerPrefs.SetInt("savedWishCount", PlayerPrefs.GetInt("savedWishCount", 0) + 1);
+        Debug.Log(PlayerPrefs.GetString("savedWish"));
+        Debug.Log(gm.savedWish.Count);
     }
 
 }

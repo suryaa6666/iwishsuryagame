@@ -21,6 +21,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        // Memanggil playerprefs keseluruhan di store dalam savedWish List.
+        for(int i = 0; i < PlayerPrefs.GetInt("savedWishCount"); i++) {
+            savedWish.Add(PlayerPrefs.GetString("savedWish" + i.ToString()));
+        }
         canOpen = GameObject.Find("CanOpen");
         // kata = new string[2, 2];
         sfx = FindObjectOfType<SfxManager>();

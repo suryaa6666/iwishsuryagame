@@ -31,15 +31,18 @@ public class IWish : MonoBehaviour
     {
         var judulBanyak = Random.Range(0, kata.judulBanyak);
         var deskripsiBanyak = Random.Range(0, kata.deskripsiBanyak);
-        var x = "CINTARA";
-        var generateRandom = x[Random.Range(0, x.Length - 1)];
+        var judulBanyakString = Random.Range(0, kata.judulBanyak).ToString("D2");
+        var deskripsiBanyakString = Random.Range(0, kata.deskripsiBanyak).ToString("D2");
+
+        // var x = "CINTARA";
+        // var generateRandom = x[Random.Range(0, x.Length - 1)];
 
         perintah1.GetComponent<Text>().text = kata.judul[judulBanyak];
         perintah2.GetComponent<Text>().text = kata.judul[judulBanyak];
         deskripsi1.GetComponent<Text>().text = kata.deskripsi[deskripsiBanyak];
-        kodekata1.gameObject.GetComponent<Text>().text = $"Kode wish : {judulBanyak}{deskripsiBanyak}";
-        kodekata2.gameObject.GetComponent<Text>().text = $"Kode wish : {judulBanyak}{deskripsiBanyak}";
-        kode = $"{judulBanyak}{deskripsiBanyak}";
+        kodekata1.gameObject.GetComponent<Text>().text = $"Kode wish : {judulBanyakString}{deskripsiBanyakString}";
+        kodekata2.gameObject.GetComponent<Text>().text = $"Kode wish : {judulBanyakString}{deskripsiBanyakString}";
+        kode = $"{judulBanyakString}{deskripsiBanyakString}";
         Debug.Log(kode);
         gm = FindObjectOfType<GameManager>();
 

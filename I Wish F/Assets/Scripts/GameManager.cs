@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public int banyakChanceSehari;
     private GameObject canOpen;
     public List<string> savedWish = new List<string>();
-
+    public string kodeTerbukaSavedWish;
 
 
     private void Awake()
@@ -69,15 +69,8 @@ public class GameManager : MonoBehaviour
 
     public void Panel(GameObject panel)
     {
-        if (panel.gameObject.name != "IWISH")
-        {
-            panel.SetActive(true);
-            var anim = panel.GetComponent<Animator>();
-            anim.Play("Panel");
-            SfxManager.source.clip = sfx.sfxList[0];
-            SfxManager.source.Play();
-        }
-        else
+
+        if(panel.gameObject.name == "IWISH")
         {
             if (chance > 0)
             {
@@ -100,7 +93,30 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(CloseNotif());
             }
         }
+        else if(panel.gameObject.name == "IWISHSAVED") 
+        {
+            panel.SetActive(true);
+            var anim = panel.GetComponent<Animator>();
+            anim.Play("Panel");
+            SfxManager.source.clip = sfx.sfxList[0];
+            SfxManager.source.Play();
+        } 
+        else
+        {
+            panel.SetActive(true);
+            var anim = panel.GetComponent<Animator>();
+            anim.Play("Panel");
+            SfxManager.source.clip = sfx.sfxList[0];
+            SfxManager.source.Play();
+        }
     }
+
+    public void KodeTerbuka(string kode) {
+        kodeTerbukaSavedWish = kode;
+        Debug.Log($"test{kode}");
+    }
+
+
 
     public void PanelBalik(GameObject newPanel)
     {

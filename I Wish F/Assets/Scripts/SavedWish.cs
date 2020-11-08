@@ -9,6 +9,7 @@ public class SavedWish : MonoBehaviour
     public GameObject noSavedCode;
     GameManager gameManager;
     public GameObject savedWishesPrefabs;
+    public GameObject iWishPanel;
 
 
     private void Awake() {
@@ -28,9 +29,13 @@ public class SavedWish : MonoBehaviour
     private void OnEnable() {
         for(int i = 0; i < gameManager.savedWish.Count; i++) {
             var x = Instantiate(savedWishesPrefabs, transform.position, Quaternion.identity) as GameObject;
+            var y = gameManager.savedWish[i];
             x.transform.GetChild(0).gameObject.GetComponent<Text>().text = $"{(i + 1).ToString()}. {gameManager.savedWish[i]}";
             x.transform.GetChild(1).gameObject.GetComponent<Text>().text = $"{(i + 1).ToString()}. {gameManager.savedWish[i]}";
             x.transform.SetParent(content.GetComponent<Transform>());
+            x.GetComponent<Button>().onClick.AddListener(delegate { gameManager.Panel(iWishPanel); });
+            x.GetComponent<Button>().onClick.AddListener(delegate { gameManager.KodeTerbuka(y); });
+
         }
     }
 

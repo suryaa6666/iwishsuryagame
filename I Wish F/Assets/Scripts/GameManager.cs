@@ -87,8 +87,8 @@ public class GameManager : MonoBehaviour
             }
             else if (chance <= 0)
             {
-                notifications.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Usage limit has been reached, see you tomorrow ^_^";
                 notifications.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Usage limit has been reached, see you tomorrow ^_^";
+                notifications.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Usage limit has been reached, see you tomorrow ^_^";
                 notifications.SetActive(true);
                 StartCoroutine(CloseNotif());
             }
@@ -155,11 +155,11 @@ public class GameManager : MonoBehaviour
         panel.SetActive(false);
     }
 
-    IEnumerator CloseNotif()
+    public IEnumerator CloseNotif()
     {
         yield return new WaitForSeconds(0.50f);
-        notifications.transform.GetChild(0).gameObject.GetComponent<Text>().text = "Saved!";
         notifications.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Saved!";
+        notifications.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Saved!";
         notifications.SetActive(false);
     }
 

@@ -11,8 +11,9 @@ public class IWish : MonoBehaviour
     Katakata kata;
     private GameObject kodekata1;
     private GameObject kodekata2;
-    private string kode;
+    public string kode;
     GameManager gm;
+    public Button saveButton;
 
 
     private void Awake()
@@ -31,8 +32,8 @@ public class IWish : MonoBehaviour
     {
         var judulBanyak = Random.Range(0, kata.judulBanyak);
         var deskripsiBanyak = Random.Range(0, kata.deskripsiBanyak);
-        var judulBanyakString = Random.Range(0, kata.judulBanyak).ToString("D2");
-        var deskripsiBanyakString = Random.Range(0, kata.deskripsiBanyak).ToString("D2");
+        var judulBanyakString = judulBanyak.ToString("D2");
+        var deskripsiBanyakString = deskripsiBanyak.ToString("D2");
 
         // var x = "CINTARA";
         // var generateRandom = x[Random.Range(0, x.Length - 1)];
@@ -48,12 +49,26 @@ public class IWish : MonoBehaviour
 
     }
 
+    private void Update() {
+        for(int i = 0 ; i < gm.savedWish.Count; i++) {
+            if(kode == gm.savedWish[i]) {
+                saveButton.interactable = false;
+            } else {
+                saveButton.interactable = true;
+            }
+        }
+    }
+
     public void SaveWish() {
         gm.savedWish.Add(kode);
         PlayerPrefs.SetString("savedWish" + PlayerPrefs.GetInt("savedWishCount").ToString(), kode);
         PlayerPrefs.SetInt("savedWishCount", PlayerPrefs.GetInt("savedWishCount", 0) + 1);
         Debug.Log(PlayerPrefs.GetString("savedWish"));
         Debug.Log(gm.savedWish.Count);
+        gm.notifications.SetActive(true);
+        gm.notifications.transform.GetChild(1).gameObject.GetComponent<Text>().text = "Wish Saved!";
+        gm.notifications.transform.GetChild(2).gameObject.GetComponent<Text>().text = "Wish Saved!";
+        StartCoroutine(gm.CloseNotif());
     }
 
 }

@@ -39,4 +39,10 @@ public class SavedWish : MonoBehaviour
         }
     }
 
+    private void OnDisable() {
+        for(int i = 0; i < content.transform.childCount; i++) {
+            Destroy(content.transform.GetChild(i).gameObject);
+        }
+    }
+
 }

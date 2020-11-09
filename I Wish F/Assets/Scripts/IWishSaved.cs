@@ -31,6 +31,12 @@ public class IWishSaved : MonoBehaviour
     private void OnEnable()
     {
         gm = FindObjectOfType<GameManager>();
+
+    }
+
+    private void Update() {
+        // kode = $"{judulBanyakString}{deskripsiBanyakString}";
+        // Debug.Log(kode);
         var x = gm.kodeTerbukaSavedWish;
         var judulBanyakString = x.Substring(0,2);
         var deskripsiBanyakString = x.Substring(2,2);
@@ -46,9 +52,7 @@ public class IWishSaved : MonoBehaviour
         deskripsi1.GetComponent<Text>().text = kata.deskripsi[deskripsiBanyak];
         kodekata1.gameObject.GetComponent<Text>().text = $"Kode wish : {judulBanyakString}{deskripsiBanyakString}";
         kodekata2.gameObject.GetComponent<Text>().text = $"Kode wish : {judulBanyakString}{deskripsiBanyakString}";
-        // kode = $"{judulBanyakString}{deskripsiBanyakString}";
-        // Debug.Log(kode);
-
+        
     }
 
     // public void SaveWish() {

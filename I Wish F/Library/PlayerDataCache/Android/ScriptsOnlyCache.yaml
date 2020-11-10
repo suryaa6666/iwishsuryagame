@@ -5,7 +5,9 @@ ScriptsOnlyBuild:
     - ChangeBG
     - GameManager
     - IWish
+    - IWishSaved
     - Katakata
+    - SavedWish
     - SfxManager
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -37,10 +39,16 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
+    - UnityEngine.UI.RectMask2D
+    - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Text
+    - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -74,19 +82,31 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11172}
     - Class: 114
-      Script: {instanceID: 11480}
+      Script: {instanceID: 11194}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11482}
     - Class: 114
-      Script: {instanceID: 12194}
+      Script: {instanceID: 11486}
     - Class: 114
-      Script: {instanceID: 12246}
+      Script: {instanceID: 11536}
     - Class: 114
-      Script: {instanceID: 12404}
+      Script: {instanceID: 11706}
     - Class: 114
-      Script: {instanceID: 12894}
+      Script: {instanceID: 11864}
+    - Class: 114
+      Script: {instanceID: 12024}
+    - Class: 114
+      Script: {instanceID: 12196}
+    - Class: 114
+      Script: {instanceID: 12248}
+    - Class: 114
+      Script: {instanceID: 12406}
+    - Class: 114
+      Script: {instanceID: 12546}
+    - Class: 114
+      Script: {instanceID: 13036}
     - Class: 114
       Script: {instanceID: 13234}
     - Class: 114
@@ -102,13 +122,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13656}
     - Class: 114
-      Script: {instanceID: 13894}
+      Script: {instanceID: 13826}
     - Class: 114
-      Script: {instanceID: 13932}
+      Script: {instanceID: 13896}
     - Class: 114
-      Script: {instanceID: 14098}
+      Script: {instanceID: 13934}
     - Class: 114
-      Script: {instanceID: 14270}
+      Script: {instanceID: 14100}
+    - Class: 114
+      Script: {instanceID: 14114}
+    - Class: 114
+      Script: {instanceID: 14274}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -126,6 +150,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 5f1752ed2092162f016c19510c28a8b9
+    assemblyName: UnityEngine.UI.dll
+    namespaceName: UnityEngine.UI
+    className: Button
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -356,7 +386,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: f44da057f97821ab5841ab0a5a5ab32a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: IWish
@@ -402,12 +432,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TextContainer
-  - hash:
-      serializedVersion: 2
-      Hash: 5f1752ed2092162f016c19510c28a8b9
-    assemblyName: UnityEngine.UI.dll
-    namespaceName: UnityEngine.UI
-    className: Button
   - hash:
       serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
@@ -500,7 +524,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 67ffd3e4b768584ed9ab36c010f12306
+      Hash: 51313dd6f2810700350df42d9c84ea53
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -522,6 +546,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: IWishSaved
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -558,6 +588,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 59a55630c1a633c3ff1b3f5d5b168f58
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SavedWish
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -645,4 +681,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/Game.unity
-  playerPath: /home/suryaelidanto/Desktop/Karya GameQ/I Wish F/Builds/1/IWishSurya.apk
+  playerPath: /home/suryaelidanto/iwishsurya/I Wish F/Builds/2/IWishSurya.apk

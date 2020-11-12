@@ -35,7 +35,7 @@ public class SavedWish : MonoBehaviour
             x.transform.SetParent(content.GetComponent<Transform>());
             x.GetComponent<Button>().onClick.AddListener(delegate { gameManager.Panel(iWishPanel); });
             x.GetComponent<Button>().onClick.AddListener(delegate { gameManager.KodeTerbuka(y); });
-            x.GetComponent<RectTransform>().localScale = new Vector3(1f,1f,1f);
+            x.GetComponent<RectTransform>().localScale = new Vector3(1.3f,1.2f,1f);
         }
     }
 

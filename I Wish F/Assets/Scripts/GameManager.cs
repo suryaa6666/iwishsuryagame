@@ -192,6 +192,10 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void ItsMe() {
+        Application.OpenURL("https://facebook.com/cintara.elidanto");
+    }
+
 
 
 }
